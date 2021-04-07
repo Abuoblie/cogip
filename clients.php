@@ -15,7 +15,28 @@
 
 <h1>COGIP : Contact directory</h1>
 
-<?php ?> <!-- insert table of client here-->
+<?php
+//just a test for now
+$rows = 22;
+$cols = 4;
+function drawTable($rows, $cols){
+echo "<table border='1'>"; 
+
+for($tr=1;$tr<=$rows;$tr++){ 
+
+    echo "<tr>"; 
+        for($td=1;$td<=$cols;$td++){ 
+               echo "<td align='center'>".$tr*$td."</td>"; 
+        } 
+    echo "</tr>"; 
+} 
+
+echo "</table>";
+}
+
+drawTable($rows,$cols);
+
+?> <!-- insert table of client here-->
 
 
 

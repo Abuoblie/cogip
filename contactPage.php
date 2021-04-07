@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <form action="" method="POST">
         	
-            <div  style="width: 30%;height: 30%;position: relative;margin-left: auto;margin-right: auto;">
+            <div  style="width: 50%;height: 30%;position: relative;margin-left: auto;margin-right: auto;">
                 <div class="form-group mb-2"> 
                     <label class="control-label" for="surname">Surname:</label>
                     <input type="text" id="surname" required maxlength="48"   

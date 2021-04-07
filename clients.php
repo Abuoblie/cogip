@@ -13,7 +13,9 @@
   require_once "Assets/header.php";
 ?>
 
-<h1>Welcome to the COGIP</h1>
+<h1>COGIP : Contact directory</h1>
+
+<?php ?> <!-- insert table of client here-->
 
 
 

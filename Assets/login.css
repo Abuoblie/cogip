@@ -6,4 +6,12 @@ h1
 .welcomeLog
 {
     margin-top: 25vh;
+    margin-left: 60vh;
+    margin-right: auto;
+}
+
+.login
+{
+    margin-top: 5vh;
+    margin-left: 10vh;
 }

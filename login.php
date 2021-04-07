@@ -23,13 +23,13 @@
         <form>
             Email :
             <br>
-            <input type="email" placeholder="email" required size="60">
+            <input type="email" placeholder="Email" required size="60">
             <br>
             Password : 
             <br>
-            <input type="password" placeholder="password" required size="60">
+            <input type="password" placeholder="Password" required size="60">
             <br>
-            <input type="submit" placeholder="submit">
+            <input type="submit" placeholder="Login">
         </form>
     </div>
 </div>

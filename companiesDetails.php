@@ -8,6 +8,7 @@
              <th>Company Type:</th>
           </tr>
      </thead>
+     
           <tr>
              <th>RESULT</th>
              <th>RESULT</th>

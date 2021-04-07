@@ -1,7 +1,7 @@
 <?php 
-  require_once "/cogip/Assets/header.php";
+  require_once "header.php";
 ?>
 
 <?php 
-  require_once " /cogip/Assets/footer.php ";
+  require_once "footer.php";
 ?>

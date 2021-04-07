@@ -6,6 +6,7 @@
              <th>TVA Number:</th>
              <th>Phone Number:</th>
              <th>Company Type:</th>
+             
           </tr>
      </thead>
           <tr>

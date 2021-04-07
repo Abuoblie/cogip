@@ -1,4 +1,8 @@
-<?php ?>
+<?php
+  session_start();
+  require_once "/COGIP/Assets/ProcessHandler.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

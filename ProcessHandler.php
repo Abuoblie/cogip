@@ -16,6 +16,10 @@ class Handle extends dbh{
                         $_SESSION['first_name'] = $row['first_name'];
                         $_SESSION['last_name']  = $row['last_name'];
                 }
+                else {
+                       echo "invalid login or password";
+                }
+                exit(); 
 
                 
         }
@@ -27,7 +31,8 @@ class Handle extends dbh{
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$check]);
                 $result = $stmt -> fetchAll();  
-                return $result;     
+                return $result; 
+                exit();     
         }
        
        
@@ -41,7 +46,8 @@ class Handle extends dbh{
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$check]);
                 $result = $stmt -> fetchAll();  
-                return $result;  
+                return $result; 
+                exit();  
                 
         }
 
@@ -56,6 +62,7 @@ class Handle extends dbh{
                 $stmt->execute([$check]);
                 $result = $stmt -> fetchAll();  
                 return $result; 
+                exit(); 
                 
         }
         // 3Providers page
@@ -68,37 +75,34 @@ class Handle extends dbh{
                  $stmt->execute([$check]);
                  $result = $stmt -> fetchAll();  
                  return $result; 
-                 
+                 exit(); 
          }
 
 
-        public function update($TABLE, $Attribute, $condition , $check)//order by id desc limit 5
-        {
-                $sql = "UPDATE $TABLE  SET $Attribute where $condition=?";
-                $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$check]);
-                
-        }
         public function delete($TABLE, $condition , $check)//order by id desc limit 5
         {  
                 $sql = "DELETE FROM $TABLE where $condition = ?";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$check]);
-                
+                exit(); 
         }
 
-        public function insert($TABLE, $Attribute, $condition , $check)//order by id desc limit 5
+        public function insert($sql)//order by id desc limit 5
         {
-                $sql = "INSERT INTO $TABLE  $Attribute where $condition=?";
-                $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$check]);
-                
+                $sql = $sql;
+                $stmt = $this->connect()->query($sql);
+                exit(); 
         }
-
-
+        
+        
+        public function updateCountry( $name, $country, $vat, $condition, $check)
+        {
+                $sql = "UPDATE Company SET name =?, country =?,vat=? where $condition = ?";
+                $stmt = $this->connect()->prepare($sql); // prepare a connection with the query created above
+                $stmt->execute([$name, $country, $vat, $check]);
+        }
 
         
-
 
 
 }

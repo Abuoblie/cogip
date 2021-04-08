@@ -6,26 +6,25 @@ class dbh{
         private $password;
         private $charset;
 
-        $mysqli = new mysqli('localhost','root','root','colyseum') or die(mysqli_error($mysqli)); 
-//         public function connect()
-//         {
-//                $this->severName = "localhost";
-//                $this->DbName = "cogip";
-//                $this->user = "root";
-//                $this->charset = "utf8mb4";
-//                $this->password= "";
+        public function connect()
+        {
+               $this->severName = "localhost";
+               $this->DbName = "cogip";
+               $this->user = "root";
+               $this->charset = "utf8mb4";
+               $this->password= "";
 
-//                try {
-//                        $dsn = "mysql:host=".$this->severName.";dbname=".$this->DbName.";charset=".$this->charset;
-//                        $pdo = new PDO($dsn, $this->user, $this->password );
-//                        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//                        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-//                        return $pdo;
-//                } 
-//                catch (Exception $e){
-//                        echo "connection failed".$e->getMessage();
-//                }
+               try {
+                       $dsn = "mysql:host=".$this->severName.";dbname=".$this->DbName.";charset=".$this->charset;
+                       $pdo = new PDO($dsn, $this->user, $this->password );
+                       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                       $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+                       return $pdo;
+               } 
+               catch (Exception $e){
+                       echo "connection failed".$e->getMessage();
+               }
 
-//         }
+        }
         
-// }
+}

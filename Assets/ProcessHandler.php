@@ -95,16 +95,14 @@ class Handle extends dbh{
         }
         
         
-        public function update($sql)//order by id desc limit 5
+        public function updateCountry( $name, $country, $vat, $condition, $check)
         {
-                $sql = $sql;
-                $stmt = $this->connect()->query($sql);
-               exit(); 
+                $sql = "UPDATE Company SET name =?, country =?,vat=? where $condition = ?";
+                $stmt = $this->connect()->prepare($sql); // prepare a connection with the query created above
+                $stmt->execute([$name, $country, $vat, $check]);
         }
 
-
         
-
 
 
 }

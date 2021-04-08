@@ -16,8 +16,10 @@
 		<td><?php echo $row['TVA_Number']; ?></td>
 		<td><?php echo $row['companyPhoneNumber']; ?></td>
 		<td><?php echo $row['companyType']; ?></td>
-		<th><a href="companiesPage.php?edit=" class="btn btn-info">Edit</a> <a
-			href="companiesPage.php?delete=" class="btn btn-danger">Delete</a></th>
+		<th>
+		 	<a href="companiesPage.php?edit=<?php echo $row['id'];?>" class="btn btn-info">Edit</a>
+		 	<a href="companiesPage.php?delete=<?php echo $row['id'];?>" class="btn btn-danger">Delete</a>
+		</th>
 	</tr>
            <?php endwhile; ?>
          

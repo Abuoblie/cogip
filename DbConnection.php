@@ -12,7 +12,7 @@ class dbh{
                $this->DbName = "cogip";
                $this->user = "root";
                $this->charset = "utf8mb4";
-               $this->password= "";
+               $this->password= "root";
 
                try {
                        $dsn = "mysql:host=".$this->severName.";dbname=".$this->DbName.";charset=".$this->charset;

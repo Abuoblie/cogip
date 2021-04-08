@@ -6,8 +6,9 @@ require_once "header.php";
     require_once "companiesDetails.php";
     ?>
     <div class="row justify-content-center">
+        <input type="hidden" name="id" value="<?php echo $id;?>"/>
 		<form action="" method="POST">
-			<div
+			   <div
 				style="width: 50%; height: 30%; position: relative; margin-left: auto; margin-right: auto;">
 				<div class="form-group mb-2">
 					<label class="control-label" for="companyName">Company Name:</label>

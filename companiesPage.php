@@ -6,33 +6,27 @@ require_once "header.php";
     require_once "companiesDetails.php";
     ?>
     <div class="row justify-content-center">
-        <input type="hidden" name="id" value="<?php echo $id;?>"/>
-		<form action="" method="POST">
+        
+		<form action="companiesDetails.php" method="POST">
 			   <div
 				style="width: 50%; height: 30%; position: relative; margin-left: auto; margin-right: auto;">
 				<div class="form-group mb-2">
-					<label class="control-label" for="companyName">Company Name:</label>
-					<input type="text" id="companyName" required maxlength="48"
-						name="companyName" class="form-control" value=""
+					<label class="control-label" for="name">Company Name:</label>
+					<input type="text" id="name" required maxlength="48"
+						name="name" class="form-control" value="<?php echo $name;?>"
 						placeholder="Enter the  Company Name">
 				</div>
 				<div class="form-group mb-2">
-					<label class="control-label" for="TVA_Number">TVA Number:</label> <input
-						type="text" id="TVA_Number" required maxlength="48"
-						name="TVA_Number" class="form-control" value=""
-						placeholder="Enter your TVA Number">
+					<label class="control-label" for="country">Country:</label> <input
+						type="text" id="country" required maxlength="48"
+						name="country" class="form-control" value="<?php echo $country;?>"
+						placeholder="Enter your country">
 				</div>
 				<div class="form-group mb-2">
-					<label class="control-label" for="companyPhoneNumber">Phone Number:</label>
-					<input type="text" id="companyPhoneNumber" required maxlength="48"
-						name="companyPhoneNumber" class="form-control" value=""
-						placeholder="Enter your Phone Number">
-				</div>
-				<div class="form-group mb-2">
-					<label class="control-label" for="companyType">Company Type:</label>
-					<input type="text" id="companyType" required maxlength="48"
-						name="companyType" class="form-control" value=""
-						placeholder="Enter your Company Type">
+					<label class="control-label" for="vat">vat:</label>
+					<input type="text" id="vat" required maxlength="48"
+						name="vat" class="form-control" value="<?php echo $vat;?>"
+						placeholder="Enter your vat">
 				</div>
 
 				<div class="form-group">

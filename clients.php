@@ -36,6 +36,8 @@ echo "</table>";
 
 drawTable($rows,$cols);
 
+
+
 ?> <!-- insert table of client here-->
 
 

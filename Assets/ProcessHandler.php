@@ -8,7 +8,7 @@ class Handle extends dbh{
 
         public function getLogin($email, $password)
         {
-                $sql = "SELECT * FROM People where email= ? and password = ?";
+                $sql = "SELECT * FROM People where email= ? and pswd = ?";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt-> execute([$email, $password]);
                 if ($row = $stmt->fetch()) {

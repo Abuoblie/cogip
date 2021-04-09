@@ -1,15 +1,4 @@
-<?php
-  session_start();
-  require_once "/COGIP/Assets/ProcessHandler.php";
-  
-  if (!isset($_SESSION['email'])) {
-    header("location:/COGIP/Assets/Login.php");
-  }
-  else{
-      echo "welcome  {$_SESSION['first_name']} {$_SESSION['last_name']} ";
-  }
-
-?>
+<?php  require_once "ProcessHandler.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

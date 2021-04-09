@@ -1,7 +1,12 @@
 
 <?php
     require_once "ProcessHandler.php";
-    $mysqli = new mysqli('localhost','root','root','cogip') or die(mysqli_error($mysqli)); 
+    $update = false; 
+    $name = '';
+    $country= '';
+    $vat= '';
+    $id=0;
+    $idTeste=0;
 ?>
 <table class="table">
 	<thead>
@@ -27,23 +32,40 @@
 		</th>
 	</tr>
 	<?php } ?>
-	 <?php 
+	 <?php
+	   //edit
 	   if(isset($_GET['edit'])){
-	       $id = $row['id_Company'];
-	      
-	     if($result != null ){
-	         $name = $row['name'];;
-	         $country= $row['country'];
-	         $vat= $row['vat'];
+	       $id = $_GET['edit'];
+	       $idTeste = $id;
+	       $update = true;
+	       $resultEdit = $data -> getCompanies('id_Company',$id);
+	       if($resultEdit != null ){
 	         
+	         foreach($resultEdit as $row){
+	           $name = $row['name'];
+	           $country= $row['country'];
+	           $vat= $row['vat'];  
+	         }
 	     }
 	 }
      ?>    
     <?php 
-          if(isset($_POST['save'])){
-            $sql = " name ={$_POST['name']}, country ={$_POST['country']} vat ={$_POST['vat']} ";
-            $data  -> update('Company', $sql, 'id' , $row['id_Company']);
+          //update
+          if(isset($_POST['update'])){
+              $id = $_POST['id'];
+              $data  -> updateCountry( $_POST['name'], $_POST['country'], $_POST['vat'], 'id_Company', $id);
+              header("location: companiesPage.php");
+            
           }
-     ?>    
+     ?> 
+      <?php 
+            //delete
+            if(isset($_GET['delete'])){
+                $id = $_GET['delete']; 
+                $data -> delete('Company', 'id_Company' , $id);
+                header("location: companiesPage.php");
+            }
+     ?>
+       
          
 </table>

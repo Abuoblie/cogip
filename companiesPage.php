@@ -8,6 +8,7 @@ require_once "header.php";
     <div class="row justify-content-center">
         
 		<form action="companiesDetails.php" method="POST">
+			<input type="hidden" name="id" value="<?php echo $id;?>"/>
 			   <div
 				style="width: 50%; height: 30%; position: relative; margin-left: auto; margin-right: auto;">
 				<div class="form-group mb-2">
@@ -30,7 +31,7 @@ require_once "header.php";
 				</div>
 
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary" name="save">Save</button>
+                      <button type="submit"  class="btn btn-info" name="update">Update</button>
 				</div>
 			</div>
 		</form>

@@ -102,8 +102,18 @@ class Handle extends dbh{
                 $stmt->execute([$name, $country, $vat, $check]);
         }
 
-        
 
+        public function getContact($condition, $check)
+        {
+                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company where $condition =? ORDER by last_name, first_name";
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->execute([$check]);
+                $result = $stmt->fetchAll();
+                return $result;
+                exit();
+        }
 
 }
+
+
 

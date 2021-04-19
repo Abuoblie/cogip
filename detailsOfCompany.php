@@ -1,4 +1,6 @@
-
+<?php
+require_once "header.php";
+?>
 <?php
     require_once "ProcessHandler.php";
     $update = false; 
@@ -8,6 +10,14 @@
     $id=0;
     $idTeste=0;
 ?>
+ <?php
+      $data =  new Handle();
+      $result = $data -> getCompanies('c.id_Company',$_GET['edit']);
+     
+              foreach($result as $row){
+  ?>
+ 
+<h4 style='text-align:center'>Company: <?php echo $row['name'];?></h4>
 <table class="table">
 	<thead>
 		<tr>
@@ -16,48 +26,45 @@
 			<th>TVA Number:</th>
 		</tr>
 	</thead>
-	<h4>Clients</h4> 
-      <?php
-      $data =  new Handle();
-      $result = $data -> getCompanies('c.id_Type',1);
+	
      
-              foreach($result as $row){
-        ?>
-       
+      <h5>VAT:<?php echo  $row['vat'];?></h5>
+      <?php if($row['id_Type'] == 1){ ?>
+        <h5>Type: Provider</h5>  
+      <?php } else{ ?>
+        <h5>Type: Client</h5>
+      <?php } ?>
+      </br></br>
+      <h5>Contact Persons:</h5>  
      <tr>
 		<td><?php echo $row['name']; ?></td>
 		<td><?php echo $row['country']; ?></td>
 		<td><?php echo $row['vat']; ?></td>
-		<th>
-		 	<a href="detailsOfCompany.php?edit=<?php echo $row['id_Company'];?>" class="btn btn-info">Details</a>
-		 	
-		</th>
+		
 	</tr>
 	<?php } ?>
+	
 </table>
 <table class="table">
+    <?php
+	$resultFactures = $data -> getInvoice('c.id_Company',$_GET['edit']);
+		 foreach($resultFactures as $row){
+	?>
 	<thead>
 		<tr>
-			<th>Company Name:</th>
-			<th>Country:</th>
-			<th>TVA Number:</th>
+			<th>Invoice Number</th>
+			<th>Invoice Date</th>
+			<th>Email</th>
 		</tr>
 	</thead>	
-	 <h4>Suppliers</h4>
-	<?php
-	 $resultSuppliers = $data -> getCompanies('c.id_Type',2);
-	 foreach($resultSuppliers as $row){
-	    ?>
-	   
+	
+	    </br></br>
+	    <h5>Factures:</h5>
      <tr>
-		<td><?php echo $row['name']; ?></td>
-		<td><?php echo $row['country']; ?></td>
-		<td><?php echo $row['vat']; ?></td>
-		<th>
-		 	<a href="detailsOfCompany.php?edit=<?php echo $row['id_Company'];?>" class="btn btn-info">Details</a>
+		<td><?php echo $row['number']; ?></td>
+		<td><?php echo $row['invoice_date']; ?></td>
+		<td><?php echo $row['email']; ?></td>
 		
-		</th>
-	</tr>
 	<?php } ?>
 </table>	
 	

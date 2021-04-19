@@ -32,7 +32,7 @@
 						<li class="nav-item"><a class="nav-link " href="">Invoices</a></li>
 						<li class="nav-item"><a class="nav-link " href="companiesPage.php"
 							tabindex="-1" aria-disabled="true">Companies</a></li>
-						<li class="nav-item"><a class="nav-link " href="contactPage.php"
+						<li class="nav-item"><a class="nav-link " href="contactPageDetails.php"
 							tabindex="-1" aria-disabled="true">Contacts</a></li>
 						<li class="nav-item"><a class="nav-link " href="" tabindex="-1"
 							aria-disabled="true">Admin</a></li>

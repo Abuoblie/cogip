@@ -14,7 +14,9 @@ require_once "header.php";
 		<tr>
 			<th>First Name:</th>
 			<th>Last Name:</th>
+			<th>Telephone:</th>
 			<th>Email:</th>
+			<th>Company:</th>
 			<th>Action</th>
 		</tr>
 	</thead>
@@ -27,10 +29,11 @@ require_once "header.php";
      <tr>
 		<td><?php echo $row['first_name']; ?></td>
 		<td><?php echo $row['last_name']; ?></td>
+		<td><?php echo $row['Telephone']; ?></td>
 		<td><?php echo $row['email']; ?></td>
+		<td><?php echo $row['id_Company']; ?></td>
 		<th>
-		 	<a href="contactPageDetails.php?edit=<?php echo $row['id_People'];?>" class="btn btn-info">Edit</a>
-		 	<a href="contactPageDetails.php?delete=<?php echo $row['id_People'];?>" class="btn btn-danger">Delete</a>
+		 	<a href="detailsOfContact.php?edit=<?php echo $row['id_People'];?>" class="btn btn-info">Details</a>
 		</th>
 	</tr>
 	<?php } ?>

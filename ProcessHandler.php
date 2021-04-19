@@ -24,6 +24,15 @@ class Handle extends dbh{
                 
         }
        
+        
+        public function getContact($condition , $check) { 
+            $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company where $condition =? ORDER by last_name, first_name";
+            $stmt = $this->connect()->prepare($sql); 
+            $stmt->execute([$check]);
+            $result = $stmt -> fetchAll();
+            return $result; 
+            exit(); 
+        }
       
         
         
@@ -54,7 +63,8 @@ class Handle extends dbh{
             $result = $stmt -> fetchAll();
             return $result;
             exit(); 
-        }        // 3Providers page
+        }        
+        // 3Providers page
          //This page will display a list of all providers in alphabetical order. The name of the provider will be a link to a new page detailing the provider, the content will be generated with the ID of the chosen provider. (same detailing page as for companies)
 
          public function getProviders($condition , $check)

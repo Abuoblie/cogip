@@ -1,21 +1,41 @@
-
+<?php
+require_once "header.php";
+?>
+<?php
+    require_once "ProcessHandler.php";
+    $first_name = '';
+    $last_name= '';
+    $email= '';
+    $pswd='';
+?>
+<div class="container-md">
 <table class="table">
 	<thead>
 		<tr>
-			<th>Surname:</th>
-			<th>First Number:</th>
-			<th>Phone Number:</th>
+			<th>First Name:</th>
+			<th>Last Name:</th>
 			<th>Email:</th>
-			<th>Company:</th>
+			<th>Action</th>
 		</tr>
 	</thead>
-	<tr>
-		<th>RESULT</th>
-		<th>RESULT</th>
-		<th>RESULT</th>
-		<th>RESULT</th>
-		<th>RESULT</th>
-		<td><a href="contatactPage.php?edit=" class="btn btn-info">Edit</a> <a
-			href="contatactPage.php?delete=" class="btn btn-danger">Delete</a></td>
+	
+      <?php
+      $data =  new Handle();
+      $result = $data -> getPeople(1,1);
+        foreach($result as $row){
+        ?>
+     <tr>
+		<td><?php echo $row['first_name']; ?></td>
+		<td><?php echo $row['last_name']; ?></td>
+		<td><?php echo $row['email']; ?></td>
+		<th>
+		 	<a href="contactPageDetails.php?edit=<?php echo $row['id_People'];?>" class="btn btn-info">Edit</a>
+		 	<a href="contactPageDetails.php?delete=<?php echo $row['id_People'];?>" class="btn btn-danger">Delete</a>
+		</th>
 	</tr>
-</table>
+	<?php } ?>
+</div>
+
+<?php
+require_once "footer.php";
+?>

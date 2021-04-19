@@ -8,7 +8,7 @@
 <p>Hello !</p>
 
 
-<p>Last invoice :</p>
+<h4>Last invoice :</h4>
 
 <table class="table">
   <thead class="thead-dark">
@@ -23,16 +23,30 @@
     
     $clients = new Handle () ;
     $resultat = $clients->getInvoice(1,1) ;
-    foreach ($resultat as  $row ) {
-      echo "
-          <tr>
-            <td>{$row['name']}</td>
-            <td>{$row['number']}</td>
-            <td>{$row['invoice_date']}</td>
-          </tr>
-      ";
-
+    if (count($resultat) > 5) {
+      for ($i = 0; $i < 5; $i++) {
+      
+        echo "
+            <tr>
+              <td>{$resultat[$i]['name']}</td>
+              <td>{$resultat[$i]['number']}</td>
+              <td>{$resultat[$i]['invoice_date']}</td>
+            </tr>
+        ";
+      }
+    } else{
+      foreach ($resultat as  $row ) {
+        echo "
+            <tr>
+              <td>{$row['name']}</td>
+              <td>{$row['number']}</td>
+              <td>{$row['invoice_date']}</td>
+            </tr>
+        ";
+  
+      }
     }
+
     ?>
   </tbody>
 </table>
@@ -42,7 +56,7 @@
 <?php ?> <!--insert data base mysql here-->
 
 
-<p>Last contacts :</p>
+<h4>Last contacts :</h4>
 
 <table class="table">
   <thead class="thead-dark">
@@ -77,7 +91,7 @@
 
 <?php ?><!--insert data base mysql here-->
 
-<p>Last compagnies :</p>
+<h4>Last compagnies :</h4>
 
 <table class="table">
   <thead class="thead-dark">

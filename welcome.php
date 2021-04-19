@@ -72,16 +72,30 @@
     
     $clients = new Handle () ;
     $resultat = $clients->getContact(1,1) ;
-    foreach ($resultat as  $row ) {
-      echo "
-          <tr>
-            <td>{$row['first_name']}</td>
-            <td>{$row['last_name']}</td>
-            <td>{$row['email']}</td>
-            <td>{$row['name']}</td>
-          </tr>
-      ";
-
+    if (count($resultat) > 5) {
+      for ($i = 0; $i < 5; $i++) {
+      
+        echo "
+            <tr>
+              <td>{$resultat[$i]['first_name']}</td>
+              <td>{$resultat[$i]['last_name']}</td>
+              <td>{$resultat[$i]['email']}</td>
+              <td>{$resultat[$i]['name']}</td>
+            </tr>
+        ";
+      }
+    } else{
+      foreach ($resultat as  $row ) {
+        echo "
+            <tr>
+              <td>{$row['first_name']}</td>
+              <td>{$row['last_name']}</td>
+              <td>{$row['email']}</td>
+              <td>{$row['name']}</td>
+            </tr>
+        ";
+  
+      }
     }
     ?>
   </tbody>
@@ -108,16 +122,30 @@
     
     $clients = new Handle () ;
     $resultat = $clients->getCompanies(1,1) ;
-    foreach ($resultat as  $row ) {
-      echo "
-          <tr>
-            <td>{$row['name']}</td>
-            <td>{$row['country']}</td>
-            <td>{$row['lebel']}</td>
-            <td>{$row['vat']}</td>
-          </tr>
-      ";
-
+    if (count($resultat) > 5) {
+      for ($i = 0; $i < 5; $i++) {
+      
+        echo "
+        <tr>
+          <td>{$resultat[$i]['name']}</td>
+          <td>{$resultat[$i]['country']}</td>
+          <td>{$resultat[$i]['lebel']}</td>
+          <td>{$resultat[$i]['vat']}</td>
+      </tr>
+        ";
+      }
+    } else{
+      foreach ($resultat as  $row ) {
+        echo "
+            <tr>
+              <td>{$row['name']}</td>
+              <td>{$row['country']}</td>
+              <td>{$row['lebel']}</td>
+              <td>{$row['vat']}</td>
+            </tr>
+        ";
+  
+      }
     }
     ?>
   </tbody>

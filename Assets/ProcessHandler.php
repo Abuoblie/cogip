@@ -126,12 +126,12 @@ class Handle extends dbh{
                  
         }
         
-        public function insertPeople($first_name, $last_name, $email, $pswd, $id_Company)//order by id desc limit 5
+        public function insertPeople($first_name, $last_name, $email, $pswd, $id_Company, $phone)//order by id desc limit 5
         {
-                $sql = "INSERT INTO People(first_name, last_name, email, pswd, id_Company)
-                               values(?,?,?,?,?)";
+                $sql = "INSERT INTO People(first_name, last_name, email, pswd, id_Company, Telephone)
+                               values(?,?,?,?,?,?)";
                 $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$first_name, $last_name, $email, $pswd, $id_Company]);
+                $stmt->execute([$first_name, $last_name, $email, $pswd, $id_Company,  $phone]);
                 $this->pdo= null;
                 exit(); 
                  

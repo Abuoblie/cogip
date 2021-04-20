@@ -29,7 +29,7 @@ require_once "ProcessHandler.php";
                                 $email = null;
                                 $id_Company = null;
                                 $Telephone =  null;
-                                $pswd =sha1($_POST['pswd']);
+                               
 
                                 if (preg_match("/^[\w\s.]+$/", $_POST['firstName'])) {
                                         $firstName = htmlentities(trim(filter_var($_POST['firstName'], FILTER_SANITIZE_STRING)));

@@ -1,6 +1,7 @@
 <?php
 require_once "header.php";
 require_once "verification.php";
+require_once "ProcessHandler.php";
 ?>
 <div class="container-md">
     <?php
@@ -12,8 +13,9 @@ require_once "verification.php";
         $company='';
     ?>
     <div class="row justify-content-center">
+ 
 		<form action="verification.php" method="POST">
-            
+              
 			<div
 				style="width: 50%; height: 30%; position: relative; margin-left: auto; margin-right: auto;">
 				<div class="form-group mb-2">
@@ -38,9 +40,18 @@ require_once "verification.php";
 						class="form-control" value="<?php echo $email;?>" placeholder="Enter your Email">
 				</div>
 				<div class="form-group mb-2">
-					<label class="control-label" for="id_Company">Company:</label> 
-					<input type="id_Company" id="id_Company" required maxlength="48" name="id_Company"
-						class="form-control" value="<?php echo $company;?>" placeholder="Enter your Company">
+					<label class="control-label" for="id_Company">Company:</label>
+					   
+						
+				    <select name="company" id="company"> 
+				       <?php
+    				      $dataCompany =  new Handle();
+    				      $resultCompany = $dataCompany -> getCompanies(1,1);
+    				      foreach($resultCompany as $row ){
+    				    		 echo "<option value='{$row['id_Company']}'>{$row['name']}</option>"; 
+    				      } 
+				       ?> 		    			
+				     </select>
 				</div>
 
 				<div class="form-group">

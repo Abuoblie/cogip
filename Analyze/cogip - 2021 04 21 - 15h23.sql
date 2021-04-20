@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 09 avr. 2021 à 13:56
+-- Généré le : lun. 19 avr. 2021 à 13:22
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -115,20 +115,20 @@ CREATE TABLE IF NOT EXISTS `people` (
 --
 
 INSERT INTO `people` (`first_name`, `last_name`, `email`, `pswd`, `id_Company`, `id_People`, `Telephone`) VALUES
-('Peter', 'Gregory', 'peter.gregory@raviga.com', '', 1, 1, '555-12345'),
-('Dwight', 'Schrute', 'dwight.schrute@ddmfl.com', '', 4, 2, '555-9874'),
-('Cameron', 'Howe', 'cam.howe@mutiny', '', 14, 3, '555-8527'),
-('Jean', 'Talu', 'jt@jjm.fr', '', 5, 4, '555-9876'),
-('Jessica', 'Potempoche', 'jpo@bvref.com', '', 6, 5, '555-1679'),
-('Jin', 'Tonik', 'jt@ep.it', '', 10, 6, '555-3578'),
-('keveen', 'Toocourt', 'keveen.toocourt@belgalol.be', '', 11, 7, '555-6731'),
-('Cie', 'Zo', 'cz@pc.fr', '', 12, 8, '555-0286'),
-('Lou', 'Rdeau', 'lou.rdeau@proimdr.be', '', 13, 9, '555-9037'),
-('Edward', 'Silverhand', 'ed.silverhand@hooli.fr', '', 15, 10, '555-7833'),
-('Yummi', 'Toh', 'YT@po.net', '', 16, 11, '555-9987'),
-('Youri', 'Brocolli', 'youri.brocolli@pied.piper.fr', '', 17, 12, '555-1155'),
-('Jean-Christian', 'Ranu', 'jcr@cogip.be', 'ranu', 18, 13, '555-8888'),
-('Muriel', 'Perrache', 'mp@cogip.be', 'perrache', 18, 14, '555-8887');
+('Peter', 'Gregory', 'peter.gregory@raviga.com', NULL, 1, 1, '555-12345'),
+('Dwight', 'Schrute', 'dwight.schrute@ddmfl.com', NULL, 4, 2, '555-9874'),
+('Cameron', 'Howe', 'cam.howe@mutiny', NULL, 14, 3, '555-8527'),
+('Jean', 'Talu', 'jt@jjm.fr', NULL, 5, 4, '555-9876'),
+('Jessica', 'Potempoche', 'jpo@bvref.com', NULL, 6, 5, '555-1679'),
+('Jin', 'Tonik', 'jt@ep.it', NULL, 10, 6, '555-3578'),
+('keveen', 'Toocourt', 'keveen.toocourt@belgalol.be', NULL, 11, 7, '555-6731'),
+('Cie', 'Zo', 'cz@pc.fr', NULL, 12, 8, '555-0286'),
+('Lou', 'Rdeau', 'lou.rdeau@proimdr.be', NULL, 13, 9, '555-9037'),
+('Edward', 'Silverhand', 'ed.silverhand@hooli.fr', NULL, 15, 10, '555-7833'),
+('Yummi', 'Toh', 'YT@po.net', NULL, 16, 11, '555-9987'),
+('Youri', 'Brocolli', 'youri.brocolli@pied.piper.fr', NULL, 17, 12, '555-1155'),
+('Jean-Christian', 'Ranu', 'jcr@cogip.be', '9770d1c99cd356280d7bb78b97bdbe4bf25ff1da', 18, 13, '555-8888'),
+('Muriel', 'Perrache', 'mp@cogip.be', 'f2ff241eac83db641cadb1c8af3b0d8ca9fa7160', 18, 14, '555-8887');
 
 -- --------------------------------------------------------
 

@@ -1,6 +1,10 @@
 <?php 
 require_once "ProcessHandler.php";
  
+
+
+
+
  class Validation extends Handle{
     
      protected $regex = "/^[\w\s\d\.]+$/";
@@ -17,11 +21,16 @@ require_once "ProcessHandler.php";
              }
      }
 
+     
+     
+     
         public function validatePeople()
         {       
-                
+            var_dump($_POST); 
+            
                 if (isset($_POST['submit'])) {
-                        if ($this->getPeople('email', $_POST['email'])) {
+                    
+                    if ($this->getPeople('email', $_POST['email'])) {
                                 echo "contact exist in database";
                         } else {
                                 $firstName = null;

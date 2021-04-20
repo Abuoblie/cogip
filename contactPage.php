@@ -12,6 +12,10 @@ require_once "ProcessHandler.php";
         $phone='';
         $company='';
     ?>
+    <?php 
+				    $validate = new Validation();
+				    $validate -> validatePeople();
+				    ?>
     <div class="row justify-content-center">
  
 		<form action="verification.php" method="POST">
@@ -55,7 +59,8 @@ require_once "ProcessHandler.php";
 				</div>
 
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary" name="submit">Submit</button>
+				    
+					<button type="submit" class="btn btn-primary"  name="submit">Submit</button>
 				</div>
 			</div>
 		</form>

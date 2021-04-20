@@ -25,10 +25,11 @@ require_once "ProcessHandler.php";
                         } else {
                                 $firstName = null;
                                 $lastName= null;
-                                $password = null;
+                                $pswd = null;
                                 $email = null;
                                 $id_Company = null;
-                                $password =sha1($_POST['password']);
+                                $Telephone =  null;
+                                $pswd =sha1($_POST['pswd']);
 
                                 if (preg_match("/^[\w\s.]+$/", $_POST['firstName'])) {
                                         $firstName = htmlentities(trim(filter_var($_POST['firstName'], FILTER_SANITIZE_STRING)));
@@ -56,8 +57,17 @@ require_once "ProcessHandler.php";
                                         header("Location: ../login.php? id_company= invalid");
                                         exit();
                                 }
+
+                                if (preg_match("/^[\w\s.]+$/", $_POST['Telephone'])) {
+                                        $Telephone = htmlentities(trim(filter_var($_POST['Telephone'], FILTER_SANITIZE_STRING)));
+                                } else {
+                                        header("Location: ../login.php? fname= invalid");
+                                        exit();
+                                }
+
+
                                 if (empty($_GET['fname']) && empty($_GET['lname']) && empty($_GET['id_company']) && empty($_GET['email'])) {
-                                        $this->insertPeople($firstName, $lastName, $email, $password, $id_Company);
+                                        $this->insertPeople($firstName, $lastName, $email, $pswd, $id_Company,  $Telephone);
                                         echo "contact successfully created";
                                 }
                                 else {

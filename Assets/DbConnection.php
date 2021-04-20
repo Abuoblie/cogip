@@ -6,7 +6,7 @@ class dbh{
         private $password;
         private $charset;
 
-        public function connect()
+        protected function connect()
         {
                $this->severName = "localhost";
                $this->DbName = "cogip";
@@ -23,6 +23,7 @@ class dbh{
                } 
                catch (Exception $e){
                        echo "connection failed".$e->getMessage();
+                       exit();
                }
 
         }

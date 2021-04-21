@@ -39,7 +39,7 @@ class Handle extends dbh{
        
          public function getContact($condition , $check)
          {
-                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company where $condition =?   ORDER by last_name, first_name";
+                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company where $condition =?   ORDER by c.id_Company";
                  $stmt = $this->connect()->prepare($sql);
                  $stmt->execute([$check]);
                  $result = $stmt -> fetchAll();  
@@ -54,7 +54,7 @@ class Handle extends dbh{
 
         public function getPeople($condition , $check)//order by id desc limit 5
         {
-                $sql = "SELECT * FROM People where $condition =? ";
+                $sql = "SELECT * FROM People where $condition =? ORDER by first_name,last_name ";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$check]);
                 $result = $stmt -> fetchAll();  

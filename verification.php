@@ -37,7 +37,7 @@ require_once "ProcessHandler.php";
                                 $pswd = null;
                                 $email = null;
                                 $id_Company = null;
-                                $Telephone =  null;
+                                $telephone =  null;
                                
 
                                 if (preg_match("/^[\w\s.]+$/", $_POST['firstName'])) {
@@ -67,16 +67,16 @@ require_once "ProcessHandler.php";
                                         exit();
                                 }
 
-                                if (preg_match("/^[\w\s.]+$/", $_POST['Telephone'])) {
-                                        $Telephone = htmlentities(trim(filter_var($_POST['Telephone'], FILTER_SANITIZE_STRING)));
+                                if (preg_match("/^[\w\s.]+$/", $_POST['telephone'])) {
+                                        $telephone = htmlentities(trim(filter_var($_POST['telephone'], FILTER_SANITIZE_STRING)));
                                 } else {
                                         echo "invalid data";
                                         exit();
                                 }
 
 
-                                if ($firstName && $lastName && $email && $pswd && $id_Company &&  $Telephone) {
-                                        $this->insertPeople($firstName, $lastName, $email, null, $id_Company,  $Telephone);
+                                if ($firstName && $lastName && $email && $pswd && $id_Company &&  $telephone) {
+                                        $this->insertPeople($firstName, $lastName, $email, null, $id_Company,  $telephone);
                                         echo "contact successfully created";
                                 }
                                 else {

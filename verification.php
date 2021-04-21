@@ -26,8 +26,7 @@ require_once "ProcessHandler.php";
      
         public function validatePeople()
         {       
-            var_dump($_POST); 
-            
+            var_dump($_POST);
                 if (isset($_POST['submit'])) {
                     
                     if ($this->getPeople('email', $_POST['email'])) {

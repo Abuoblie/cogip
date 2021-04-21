@@ -1,6 +1,6 @@
 <?php 
 require_once "DbConnection.php";
-session_start();
+
 
 class Handle extends dbh{
        

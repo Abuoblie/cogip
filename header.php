@@ -17,7 +17,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light navagation">
 			<div class="container-fluid">
-				<button class="navbar-toggler buttonBackground " type="button"
+				<button class="navbar-toggler " type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
 					aria-controls="navbarTogglerDemo03" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -30,12 +30,22 @@
 						<li class="nav-item"><a class="nav-link  " aria-current="page"
 							href="">Home</a></li>
 						<li class="nav-item"><a class="nav-link " href="">Invoices</a></li>
-						<li class="nav-item"><a class="nav-link " href="companiesPage.php"
+						<li class="nav-item"><a class="nav-link " href="companiesDetails.php"
 							tabindex="-1" aria-disabled="true">Companies</a></li>
 						<li class="nav-item"><a class="nav-link " href="contactPageDetails.php"
 							tabindex="-1" aria-disabled="true">Contacts</a></li>
-						<li class="nav-item"><a class="nav-link " href="" tabindex="-1"
-							aria-disabled="true">Admin</a></li>
+						<li class="nav-item">
+							<div class="dropdown">
+                      			<button class="btn btn-sm navbar nav-link" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        			Admin
+                      			</button>
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="contactPage.php">New Contact</a></li>
+                                    <li><a class="dropdown-item" href="invoicePage.php">New Invoice</a></li>
+                                    <li><a class="dropdown-item" href="companyPage.php">New Company</a></li>
+                                  </ul>
+                    </div></li>
 					</ul>
 				</div>
 			</div>

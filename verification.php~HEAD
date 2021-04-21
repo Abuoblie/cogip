@@ -111,7 +111,7 @@ class Validation extends Handle
                                 echo " contact was not created please correct the mistakes and resubmit";
                         }
 
-                        echo $id_company."<br>";
+                        // ce lui si est la dernier version
                      
                         
                         if (empty($id_company) ||empty($firstName) || empty($lastName) || empty($email) || empty($Telephone) ) {

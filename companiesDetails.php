@@ -8,6 +8,7 @@
     $id=0;
     $idTeste=0;
 ?>
+<div class="container-md">
 <table class="table">
 	<thead>
 		<tr>
@@ -98,3 +99,4 @@
        
          
 </table>
+</div>

@@ -16,13 +16,19 @@ class Handle extends dbh{
                         $_SESSION['first_name'] = $row['first_name'];
                         $_SESSION['last_name']  = $row['last_name'];
                 }
-                else {
-                       echo "invalid login or password";
-                }
-               
+                 
         
                $this->pdo= null;
-               exit();                
+                             
+        }
+
+        public function getType()
+        { 
+                
+                $stmt = $this->connect()->query("SELECT * FROM type");
+                $result = $stmt -> fetchAll();  
+                return $result; 
+                $this->pdo= null;
         }
        
         //This page will display a list of all the invoices from the most recent to the oldest. Each invoice number will be a link to a new page detailing the invoice, the content will be generated with the ID of the chosen invoice.
@@ -34,18 +40,18 @@ class Handle extends dbh{
                 $result = $stmt -> fetchAll();  
                 return $result; 
                 $this->pdo= null;
-                exit();             
+                            
         }
        
          public function getContact($condition , $check)
          {
-                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company where $condition =?   ORDER by last_name, first_name";
+                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company where $condition =?   ORDER by c.id_Company";
                  $stmt = $this->connect()->prepare($sql);
                  $stmt->execute([$check]);
                  $result = $stmt -> fetchAll();  
                  return $result; 
                  $this->pdo= null;
-                 exit(); 
+                  
          }
        
         //Contacts page
@@ -54,13 +60,13 @@ class Handle extends dbh{
 
         public function getPeople($condition , $check)//order by id desc limit 5
         {
-                $sql = "SELECT * FROM People where $condition =? ";
+                $sql = "SELECT * FROM People where $condition =? ORDER by first_name, last_name";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$check]);
                 $result = $stmt -> fetchAll();  
                 return $result; 
                 $this->pdo= null;
-                exit();  
+                
                 
         }
 
@@ -78,7 +84,7 @@ class Handle extends dbh{
                  $result = $stmt -> fetchAll();  
                  return $result;
                  $this->pdo= null; 
-                 exit(); 
+                 
          }
 
 
@@ -88,7 +94,7 @@ class Handle extends dbh{
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$check]);
                 $this->pdo= null;
-                exit(); 
+                
         }
 
         
@@ -100,29 +106,29 @@ class Handle extends dbh{
                 $stmt = $this->connect()->prepare($sql); // prepare a connection with the query created above
                 $stmt->execute([$name, $country, $vat, $check]);
                 $this->pdo= null;
-                exit();
+                
         }
 
 
-        public function insertInvoice($number,$invoice_date,  $id_People)//order by id desc limit 5
+        public function insertInvoice($number, $invoice_date,  $id_People, $id_Company)//order by id desc limit 5
         {
-                $sql = "INSERT INTO invoice(number, id_people, invoice_date)
-                               values(?,?,?)";
+                $sql = "INSERT INTO invoice(number, invoice_date, id_People, id_Company)
+                               values(?,?,?,?)";
                 $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$number, $invoice_date, $id_People]);
+                $stmt->execute([$number, $invoice_date, $id_People, $id_Company]);
                 $this->pdo= null;
-                exit(); 
+               
                  
         }
 
         public function insertCompany($name, $country, $vat, $id_Type)//order by id desc limit 5
         {
-                $sql = "INSERT INTO People(name, country, vat, id_Type)
+                $sql = "INSERT INTO company(name, country, vat, id_Type)
                                values(?,?,?,?)";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$name, $country, $vat, $id_Type]);
                 $this->pdo= null;
-                exit(); 
+                
                  
         }
         
@@ -133,7 +139,7 @@ class Handle extends dbh{
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$first_name, $last_name, $email, $pswd, $id_Company,  $phone]);
                 $this->pdo= null;
-                exit(); 
+                
                  
         }
 

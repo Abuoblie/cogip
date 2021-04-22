@@ -6,15 +6,20 @@
 <h1>Welcome to the COGIP</h1>
 
 <div class="welcomeLog">
-    <p>Welcome to COGIP's login space </p>
+    
 
     <?php 
-
+      //$_SESSION=[];
       if (isset($_POST["submit"])) {
         $login = new Handle () ;
         $login->getLogin($_POST["email"], $_POST["pswd"]);
-        
+        var_dump($_SESSION);
       }
+      
+      if (isset($_SESSION["first_name"]))
+      {
+        echo "<p>Welcome to COGIP's login space {$_SESSION['first_name']} {$_SESSION['last_name']} </p>";
+      } 
       
     ?>
 
@@ -31,6 +36,8 @@
             <input type="submit" placeholder="Login" name="submit">
         </form>
     </div>
+
+   
 </div>
 
 

@@ -2,6 +2,22 @@
 <?php 
   require_once "Assets/header.php";
 ?>
+<?php 
+
+session_start(); //start session
+
+// declaring variable + hosting
+
+$username ="";
+$email ="";
+$error =array();
+$_SESSION['succes'] = "";
+
+//conexion with DB
+
+$db = mysqli_connect('localhost', 'root', '', 'registration');
+
+?>
 
 <h1>Welcome to the COGIP</h1>
 

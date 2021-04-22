@@ -1,16 +1,15 @@
 <?php
-require_once "header.php";
-?>
-<?php
-    require_once "ProcessHandler.php";
+require_once "../View/header.php";
+require_once "../Controller/contactAction.php";
+
+    
     $first_name = '';
     $last_name= '';
     $email= '';
     $pswd='';
-?>
- <?php
-      $data =  new Handle();
-      $result = $data -> getInvoice('i.id_People',$_GET['edit']);
+
+    $data =  new Handle();
+    $result = $data -> getInvoice('i.id_People',$_GET['edit']);
         foreach($result as $row){
  ?>
 <h4 style='text-align:center'>Contact: <?php echo " {$row['first_name']} {$row['last_name']}" ?></h4>
@@ -40,7 +39,6 @@ require_once "header.php";
     	<?php } ?>
     </table>
 </div>
-
 <?php
-require_once "footer.php";
+require_once "../View/footer.php";
 ?>

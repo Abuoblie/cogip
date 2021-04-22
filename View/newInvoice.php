@@ -1,6 +1,9 @@
-<?php require_once "header.php" ?>
 <?php
-      
+require_once "header.php" ;
+require_once "../Controller/verification.php" ;
+
+
+
       $verify = new Validation();
       if (isset($_POST['submit'])) {
               
@@ -70,4 +73,6 @@
 		</form>
 	</div>
 </div>
-<?php require_once "footer.php" ?>
+<?php
+require_once "../View/footer.php";
+?>

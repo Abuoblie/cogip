@@ -1,5 +1,5 @@
 <?php 
-require_once "DbConnection.php";
+require_once "../Model/DbConnection.php";
 
 
 class Handle extends dbh{

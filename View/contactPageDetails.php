@@ -1,5 +1,6 @@
 <?php
-require_once "header.php";
+require_once "../View/header.php";
+require_once "../Controller/contactAction.php"
 ?>
 <?php
     $first_name = '';
@@ -37,7 +38,6 @@ require_once "header.php";
 	</tr>
 	<?php } ?>
 </div>
-
 <?php
-require_once "footer.php";
+require_once "../View/footer.php";
 ?>

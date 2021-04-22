@@ -1,22 +1,14 @@
 <?php
-require_once "header.php";
-?>
-<?php
-    require_once "ProcessHandler.php";
-    $update = false; 
-    $name = '';
-    $country= '';
-    $vat= '';
-    $id=0;
-    $idTeste=0;
+require_once "../View/header.php";
+require_once "../Controller/companyAction.php"
 ?>
  <?php
-      $data =  new Handle();
+      $data =  new Validation();
       $result = $data -> getCompanies('c.id_Company',$_GET['edit']);
      
               foreach($result as $row){
   ?>
- 
+<div class="container-md"> 
 <h4 style='text-align:center'>Company: <?php echo $row['name'];?></h4>
 <table class="table">
 	<thead>
@@ -84,24 +76,9 @@ require_once "header.php";
 	         }
 	     }
 	 }
-     ?>    
-    <?php 
-          //update
-          if(isset($_POST['update'])){
-              $id = $_POST['id'];
-              $data  -> updateCountry( $_POST['name'], $_POST['country'], $_POST['vat'], 'id_Company', $id);
-              header("location: companiesPage.php");
-            
-          }
-     ?> 
-      <?php 
-            //delete
-            if(isset($_GET['delete'])){
-                $id = $_GET['delete']; 
-                $data -> delete('Company', 'id_Company' , $id);
-                header("location: companiesPage.php");
-            }
-     ?>
-       
-         
+     ?>           
 </table>
+</div>
+<?php
+require_once "../View/footer.php";
+?>

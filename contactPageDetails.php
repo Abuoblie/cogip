@@ -2,7 +2,6 @@
 require_once "header.php";
 ?>
 <?php
-    require_once "ProcessHandler.php";
     $first_name = '';
     $last_name= '';
     $email= '';
@@ -22,7 +21,7 @@ require_once "header.php";
 	</thead>
 	
       <?php
-      $data =  new Handle();
+      $data =  new Validation();
       $result = $data -> getPeople(1,1);
         foreach($result as $row){
         ?>

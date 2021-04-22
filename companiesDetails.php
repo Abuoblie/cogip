@@ -1,6 +1,6 @@
 <?php require_once "header.php" ?>
 <?php
-    require_once "ProcessHandler.php";
+    
     $update = false; 
     $name = '';
     $country= '';
@@ -19,7 +19,7 @@
 	</thead>
 	<h4>Clients</h4> 
       <?php
-      $data =  new Handle();
+      $data =  new Validation();
       $result = $data -> getCompanies('c.id_Type',1);
      
               foreach($result as $row){

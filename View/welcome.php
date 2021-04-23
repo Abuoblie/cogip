@@ -1,28 +1,33 @@
 
-<?php 
-  require_once "Assets/header.php";
-?>
-<?php 
+<?php
+require_once "../View/header.php";
 
-session_start(); //start session
 
 // declaring variable + hosting
 
 $username ="";
 $email ="";
 $error =array();
-$_SESSION['succes'] = "";
+
 
 //conexion with DB
 
-$db = mysqli_connect('localhost', 'root', '', 'registration');
+// $db = mysqli_connect('localhost', 'root', '', 'registration');
 
 ?>
-
+<div class="container-md">
 <h1>Welcome to the COGIP</h1>
 
 <p>Hello !</p>
+<p>What do you want to do today?</p>
 
+<?php if(!empty($_SESSION)){ ?>
+<div style='text-align:center'>
+    <a  href="newInvoice.php" class="btn btn-info">+ New Invoice</a>
+    <a  href="newContact.php" class="btn btn-info">+ New Contact</a>
+    <a  href="newCompany.php" class="btn btn-info">+ New Company</a>
+</div>
+<?php } ?>
 
 <h4>Last invoice :</h4>
 
@@ -145,7 +150,7 @@ $db = mysqli_connect('localhost', 'root', '', 'registration');
         <tr>
           <td>{$resultat[$i]['name']}</td>
           <td>{$resultat[$i]['country']}</td>
-          <td>{$resultat[$i]['lebel']}</td>
+          <td>{$resultat[$i]['email']}</td>
           <td>{$resultat[$i]['vat']}</td>
       </tr>
         ";
@@ -168,9 +173,9 @@ $db = mysqli_connect('localhost', 'root', '', 'registration');
 </table>
   </tbody>
 </table>
-
+</div>
 <?php ?><!--insert data base mysql here-->
 
-<?php 
-  require_once "Assets/footer.php ";
+<?php
+require_once "../View/footer.php";
 ?>

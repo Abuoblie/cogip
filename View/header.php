@@ -36,7 +36,7 @@ session_start();
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link " aria-current="" href="Login.php">Login</a></li>
 						<li class="nav-item"><a class="nav-link " aria-current="" href="Logout.php">Logout</a></li>
-						<li class="nav-item"><a class="nav-link " aria-current="" href="">Home</a></li>
+						<li class="nav-item"><a class="nav-link " aria-current="" href="welcome.php">Home</a></li>
 						<li class="nav-item"><a class="nav-link " href="">Invoices</a></li>
 						<li class="nav-item"><a class="nav-link " href="companiesDetails.php">Companies</a></li>
 						<li class="nav-item"><a class="nav-link " href="contactPageDetails.php">Contacts</a></li>

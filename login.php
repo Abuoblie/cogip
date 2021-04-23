@@ -1,50 +1,35 @@
-<?php 
-  require_once "Assets/header.php ";
-  
+<?php
+require_once "header.php";
+
+if (isset($_POST['submit'])) {
+   $signIn = new Validation();
+   $user = $signIn->login($_POST['email'], sha1($_POST['pswd']));
+}
+
+
 ?>
+<div class="row justify-content-center">
 
-<h1>Welcome to the COGIP</h1>
 
-<div class="welcomeLog">
-    
+   <form action="Login.php" method="POST">
 
-    <?php 
-      //$_SESSION=[];
-      if (isset($_POST["submit"])) {
-        $login = new Handle () ;
-        $login->getLogin($_POST["email"], $_POST["pswd"]);
-        var_dump($_SESSION);
-      }
-      
-      if (isset($_SESSION["first_name"]))
-      {
-        echo "<p>Welcome to COGIP's login space {$_SESSION['first_name']} {$_SESSION['last_name']} </p>";
-      } 
-      
-    ?>
+      <div style="width: 50%; height: 30%; position: relative; margin-left: auto; margin-right: auto;">
+         <div class="form-group mb-2">
+            <label class="control-label" for="email">email:</label> <input type="text" id="email" required maxlength="48" name="email" class="form-control" placeholder="Enter your email">
+         </div>
+         <div class="form-group mb-2">
+            <label class="control-label" for="pswd">password:</label> <input type="text" id="vat required maxlength=" 48" name='pswd' class="form-control" placeholder="Enter password">
+         </div>
+         <div class="form-group">
 
-    <div class="login">
-        <form action="login.php" method="POST">
-            Email :
-            <br>
-            <input type="email" placeholder="Email" required="required" size="60" name="email">
-            <br>
-            Password : 
-            <br>
-            <input type="password" placeholder="Password" required="required" size="60" name="pswd">
-            <br>
-            <input type="submit" placeholder="Login" name="submit">
-        </form>
-    </div>
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+         </div>
 
-   
+      </div>
+   </form>
+</div>
 </div>
 
-
-
-<?php 
-  require_once "Assets/footer.php ";
+<?php
+require_once "footer.php";
 ?>
-
-
-

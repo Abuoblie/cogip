@@ -1,4 +1,11 @@
-<?php  require_once "ProcessHandler.php"; ?>
+<?php
+  require_once "Verification.php";
+  session_start();
+  
+  $_SESSION = [];
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

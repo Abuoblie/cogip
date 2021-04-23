@@ -1,9 +1,9 @@
 <?php 
 require_once "DbConnection.php";
-session_start();
+
 
 class Handle extends dbh{
-        
+       
 
 
         public function getLogin($email, $password)
@@ -11,22 +11,47 @@ class Handle extends dbh{
                 $sql = "SELECT * FROM People where email= ? and pswd = ?";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt-> execute([$email, $password]);
-                if ($row = $stmt->fetch()) {
-                        $_SESSION['email'] = $row['email'];
-                        $_SESSION['first_name'] = $row['first_name'];
-                        $_SESSION['last_name']  = $row['last_name'];
-                }
-                else {
-                       echo "invalid login or password";
-                }
-                exit(); 
+                $login =  $stmt->fetch();
 
+                return $login;
                 
+                 
+        
+               $this->pdo= null;
+                             
+        }
+
+        public function getType()
+        { 
+                
+                $stmt = $this->connect()->query("SELECT * FROM type");
+                $result = $stmt -> fetchAll();  
+                return $result; 
+                $this->pdo= null;
         }
        
         //This page will display a list of all the invoices from the most recent to the oldest. Each invoice number will be a link to a new page detailing the invoice, the content will be generated with the ID of the chosen invoice.
-
+        public function getInvoice($condition , $check)
+        {
+                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company join invoice i on i.id_People = p.id_People where $condition =?   ORDER by invoice_date DESC";
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->execute([$check]);
+                $result = $stmt -> fetchAll();  
+                return $result; 
+                $this->pdo= null;
+                            
+        }
        
+         public function getContact($condition , $check)
+         {
+                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company where $condition =?   ORDER by c.id_Company";
+                 $stmt = $this->connect()->prepare($sql);
+                 $stmt->execute([$check]);
+                 $result = $stmt -> fetchAll();  
+                 return $result; 
+                 $this->pdo= null;
+                  
+         }
        
         //Contacts page
         //This page will display a list of all the contacts in alphabetical order.
@@ -34,19 +59,19 @@ class Handle extends dbh{
 
         public function getPeople($condition , $check)//order by id desc limit 5
         {
-                $sql = "SELECT * FROM People where $condition =?  ORDER by last_name, first_name";
+                $sql = "SELECT * FROM People where $condition =? ORDER by first_name, last_name";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$check]);
                 $result = $stmt -> fetchAll();  
                 return $result; 
-                exit();  
+                $this->pdo= null;
+                
                 
         }
 
         // 2This page will display a list of all companies in alphabetical order. The name of the company will be a link to a new page detailing the company, the content will be generated with the ID of the chosen company.
 
-        
-
+     
         // 3Providers page
          //This page will display a list of all providers in alphabetical order. The name of the provider will be a link to a new page detailing the provider, the content will be generated with the ID of the chosen provider. (same detailing page as for companies)
 
@@ -56,8 +81,9 @@ class Handle extends dbh{
                  $stmt = $this->connect()->prepare($sql);
                  $stmt->execute([$check]);
                  $result = $stmt -> fetchAll();  
-                 return $result; 
-                 exit(); 
+                 return $result;
+                 $this->pdo= null; 
+                 
          }
 
 
@@ -66,50 +92,59 @@ class Handle extends dbh{
                 $sql = "DELETE FROM $TABLE where $condition = ?";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$check]);
-                exit(); 
+                $this->pdo= null;
+                
         }
 
-        public function insert($sql)//order by id desc limit 5
-        {
-                $sql = $sql;
-                $stmt = $this->connect()->query($sql);
-                exit(); 
-        }
         
         
-        public function updateCountry( $name, $country, $vat, $condition, $check)
+        
+        public function updateCompany( $name, $country, $vat, $condition, $check)
         {
                 $sql = "UPDATE Company SET name =?, country =?,vat=? where $condition = ?";
                 $stmt = $this->connect()->prepare($sql); // prepare a connection with the query created above
                 $stmt->execute([$name, $country, $vat, $check]);
+                $this->pdo= null;
+                
         }
 
 
-        public function getContact($condition, $check)
+        public function insertInvoice($number, $invoice_date,  $id_People, $id_Company)//order by id desc limit 5
         {
-                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company where $condition =? ORDER by last_name, first_name";
+                $sql = "INSERT INTO invoice(number, invoice_date, id_People, id_Company)
+                               values(?,?,?,?)";
                 $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$check]);
-                $result = $stmt->fetchAll();
-                return $result;
-                exit();
+                $stmt->execute([$number, $invoice_date, $id_People, $id_Company]);
+                $this->pdo= null;
+               
+                 
         }
 
-        public function getInvoice($condition, $check)
+        public function insertCompany($name, $country, $vat, $id_Type)//order by id desc limit 5
         {
-                $sql = "SELECT * FROM Company as c join People p on c.id_Company = p.id_Company join invoice i on i.id_People = p.id_People where $condition =? ORDER by invoice_date";
+                $sql = "INSERT INTO company(name, country, vat, id_Type)
+                               values(?,?,?,?)";
                 $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$check]);
-                $result = $stmt->fetchAll();
-                return $result;
-                exit();
+                $stmt->execute([$name, $country, $vat, $id_Type]);
+                $this->pdo= null;
+                
+                 
         }
+        
+        public function insertPeople($first_name, $last_name, $email, $pswd, $id_Company, $phone)//order by id desc limit 5
+        {
+                $sql = "INSERT INTO People(first_name, last_name, email, pswd, id_Company, Telephone)
+                               values(?,?,?,?,?,?)";
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->execute([$first_name, $last_name, $email, $pswd, $id_Company,  $phone]);
+                $this->pdo= null;
+                
+                 
+        }
+
+        
+        
 
 
 }
-
-
-
-
-
 

@@ -1,7 +1,7 @@
 <?php
 require_once "../Model/ProcessHandler.php";
 
-class Validation extends Handle
+class ContactAction extends Handle
 {
 
  

@@ -3,7 +3,7 @@ require_once "../View/header.php";
 require_once "../Controller/companyAction.php"
 ?>
  <?php
-      $data =  new Validation();
+ $data =  new CompanyAction();
       $result = $data -> getCompanies('c.id_Company',$_GET['edit']);
      
               foreach($result as $row){

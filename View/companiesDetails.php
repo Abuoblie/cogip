@@ -14,7 +14,7 @@ require_once "../Controller/companyAction.php"
 	</thead>
 	<h4>Clients</h4> 
       <?php
-      $data =  new Validation();
+      $data =  new CompanyAction();
       $result = $data -> getCompanies('c.id_Type',1);
      
               foreach($result as $row){

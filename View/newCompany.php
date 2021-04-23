@@ -5,7 +5,7 @@ require_once "../Controller/companyAction.php" ;
 ?>
  <?php
       
-      $verify = new Validation();
+ $verify = new CompanyAction();
       if (isset($_POST['submit'])) {
               
               $verify->validateCompany();
@@ -49,7 +49,7 @@ require_once "../Controller/companyAction.php" ;
 						
 				    <select name="id_Type" id="id_Type"> 
 				       <?php
-    				      $Type =  new Validation();
+				       $Type =  new CompanyAction();
     				      $resultType = $Type -> getType();
 				      
     				      foreach($resultType as $row ){

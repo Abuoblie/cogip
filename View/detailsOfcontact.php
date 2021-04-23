@@ -8,7 +8,7 @@ require_once "../Controller/contactAction.php";
     $email= '';
     $pswd='';
 
-    $data =  new Handle();
+    $data =  new ContactAction();
     $result = $data -> getInvoice('i.id_People',$_GET['edit']);
         foreach($result as $row){
  ?>

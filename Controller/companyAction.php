@@ -7,7 +7,7 @@ require_once "../Model/ProcessHandler.php";
 
 
 
-class Validation extends Handle
+class CompanyAction extends Handle
 {
 
        

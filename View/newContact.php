@@ -4,7 +4,7 @@ require_once "../Controller/contactAction.php" ;
 
 
       
-      $verify = new Validation();
+$verify = new ContactAction();
       if (isset($_POST['submit'])) {
               
               $verify->validatePeople();
@@ -47,7 +47,7 @@ require_once "../Controller/contactAction.php" ;
 						
 				    <select name="id_company" id="company"> 
 				       <?php
-				       $dataCompany =  new Validation();
+				       $dataCompany =  new ContactAction();
     				      $resultCompany = $dataCompany -> getCompanies(1,1);
     				      foreach($resultCompany as $row ){
     				    		 echo "<option value='{$row['id_Company']}'>{$row['name']}</option>"; 

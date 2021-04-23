@@ -1,6 +1,6 @@
 <?php
 require_once "../View/header.php";
-require_once "../Controller/companyAction.php" 
+require_once "../Controller/verification.php" 
 ?>
 
 <div class="container-md">

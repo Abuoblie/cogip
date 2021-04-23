@@ -42,7 +42,8 @@
                                     <li><a class="dropdown-item" href="newInvoice.php">New Invoice</a></li>
                                     <li><a class="dropdown-item" href="newCompany.php">New Company</a></li>
                                   </ul>
-                    </div></li>
+                    		</div>
+                    	</li>
 					</ul>
 				</div>
 			</div>

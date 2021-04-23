@@ -1,3 +1,11 @@
+<?php 
+require_once "../Controller/verification.php"; 
+
+session_start(); 
+$_SESSION = []; 
+
+var_dump($_SESSION);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,22 +35,29 @@
 				<img class="img-fluid " height="30%" width="40%" src="../assets/logo.jpeg" alt="foto"></a>
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link " aria-current="page" href="">Home</a></li>
+						<li class="nav-item"><a class="nav-link " aria-current="" href="Login.php">Login</a></li>
+						<li class="nav-item"><a class="nav-link " aria-current="" href="Logout.php">Logout</a></li>
+						<li class="nav-item"><a class="nav-link " aria-current="" href="">Home</a></li>
 						<li class="nav-item"><a class="nav-link " href="">Invoices</a></li>
 						<li class="nav-item"><a class="nav-link " href="companiesDetails.php">Companies</a></li>
 						<li class="nav-item"><a class="nav-link " href="contactPageDetails.php">Contacts</a></li>
 						<li class="nav-item">
-							<div class="dropdown">
-                      			<button class="btn btn-sm navbar nav-link" type="button" id="dropdownMenuButton1" 
-                      					data-bs-toggle="dropdown" aria-expanded="false">Admin
-                      			</button>
-                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="">Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="newContact.php">New Contact</a></li>
-                                    <li><a class="dropdown-item" href="newInvoice.php">New Invoice</a></li>
-                                    <li><a class="dropdown-item" href="newCompany.php">New Company</a></li>
-                                  </ul>
-                    		</div>
+						  <?php if(!empty($_SESSION)){ 
+						      var_dump($_SESSION);
+						      ?>
+						        
+    							<div class="dropdown">
+                          			<button class="btn btn-sm navbar nav-link" type="button" id="dropdownMenuButton1" 
+                          					data-bs-toggle="dropdown" aria-expanded="false">Admin
+                          			</button>
+                                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="">Dashboard</a></li>
+                                        <li><a class="dropdown-item" href="newContact.php">New Contact</a></li>
+                                        <li><a class="dropdown-item" href="newInvoice.php">New Invoice</a></li>
+                                        <li><a class="dropdown-item" href="newCompany.php">New Company</a></li>
+                                      </ul>
+                        		</div>
+                    	   <?php }?>
                     	</li>
 					</ul>
 				</div>

@@ -1,6 +1,5 @@
 <?php 
-require_once "header.php" ;
-require_once "../Controller/verification.php" 
+require_once "../View/header.php";
 
 ?>
  <?php

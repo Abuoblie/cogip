@@ -1,6 +1,6 @@
 <?php
 require_once "../View/header.php";
-require_once "../Controller/contactAction.php"
+require_once "../Controller/verification.php";
 ?>
 <?php
     $first_name = '';
@@ -22,7 +22,7 @@ require_once "../Controller/contactAction.php"
 	</thead>
 	
       <?php
-      $data =  new ContactAction();
+      $data =  new Validation();
       $result = $data -> getPeople(1,1);
         foreach($result as $row){
         ?>

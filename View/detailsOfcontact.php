@@ -1,6 +1,6 @@
 <?php
 require_once "../View/header.php";
-require_once "../Controller/contactAction.php";
+require_once "../Controller/verification.php";
 
     
     $first_name = '';
@@ -8,7 +8,7 @@ require_once "../Controller/contactAction.php";
     $email= '';
     $pswd='';
 
-    $data =  new ContactAction();
+    $data =  new Validation();
     $result = $data -> getInvoice('i.id_People',$_GET['edit']);
         foreach($result as $row){
  ?>

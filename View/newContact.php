@@ -1,10 +1,10 @@
 <?php
 require_once "header.php" ;
-require_once "../Controller/contactAction.php" ;
+require_once "../Controller/verification.php";
 
 
       
-$verify = new ContactAction();
+$verify = new Validation();
       if (isset($_POST['submit'])) {
               
               $verify->validatePeople();
@@ -47,7 +47,7 @@ $verify = new ContactAction();
 						
 				    <select name="id_company" id="company"> 
 				       <?php
-				       $dataCompany =  new ContactAction();
+				       $dataCompany =  new Validation();
     				      $resultCompany = $dataCompany -> getCompanies(1,1);
     				      foreach($resultCompany as $row ){
     				    		 echo "<option value='{$row['id_Company']}'>{$row['name']}</option>"; 

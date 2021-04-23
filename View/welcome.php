@@ -8,6 +8,9 @@ require_once "../View/header.php";
 $username ="";
 $email ="";
 $error =array();
+$invoice = null;
+$people = null;
+$company = null;
 
 
 //conexion with DB
@@ -40,7 +43,19 @@ $error =array();
     </tr>
   </thead>
   <tbody>
+ <?php 
+ var_dump($_GET['invoice']);
+  if(isset($_GET['idInvoice'])){
+      $deletePeople = new Validation () ;
+      //var_dump($invoice);
+      $deletePeople -> delete('invoice','id_invoice', $_GET['idInvoice'] );
+     
+      
+  }
+  
+  ?>  
     <?php
+  
     
     $clients = new Validation () ;
     $resultat = $clients->getInvoice(1,1) ;
@@ -61,11 +76,12 @@ $error =array();
                           <td>{$resultat[$i]['number']}</td>
                           <td>{$resultat[$i]['invoice_date']}</td>
                           <td>
-                                <a href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                                <a href='#?invoice={$resultat[$i]['id_invoice']}' class='btn btn-info'>Delete</a>
                            </td>
                         </tr>
                     ";
               }
+              
            }
      }else{
         foreach ($resultat as  $row ) {
@@ -86,7 +102,7 @@ $error =array();
                     </tr>
                     <tr>
                       <td>
-                         <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                         <a  href='#?idInvoice={$resultat[$i]['id_invoice']}' class='btn btn-info'>Delete</a>
                       </td>
                     </tr>
                   ";
@@ -96,6 +112,7 @@ $error =array();
     
 
     ?>
+   
   </tbody>
 </table>
   </tbody>
@@ -140,7 +157,7 @@ $error =array();
                   <td>{$resultat[$i]['email']}</td>
                   <td>{$resultat[$i]['name']}</td>
                   <td>
-                      <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                      <a  href='#?idPeople={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
                   </td>
                 </tr>
             ";

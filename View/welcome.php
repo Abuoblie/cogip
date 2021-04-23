@@ -42,7 +42,7 @@ $error =array();
   <tbody>
     <?php
     
-    $clients = new Handle () ;
+    $clients = new Validation () ;
     $resultat = $clients->getInvoice(1,1) ;
     if (count($resultat) > 5) {
       for ($i = 0; $i < 5; $i++) {
@@ -91,7 +91,7 @@ $error =array();
   <tbody>
     <?php
     
-    $clients = new Handle () ;
+    $clients = new Validation () ;
     $resultat = $clients->getContact(1,1) ;
     if (count($resultat) > 5) {
       for ($i = 0; $i < 5; $i++) {
@@ -131,7 +131,7 @@ $error =array();
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Compagny Name</th>
+      <th scope="col">Company Name</th>
       <th scope="col">Country</th>
       <th scope="col">Email</th>
       <th scope="col">Vat</th>
@@ -141,8 +141,9 @@ $error =array();
     <?php
 
     
-    $clients = new Handle () ;
-    $resultat = $clients->getCompanies(1,1) ;
+    $clients = new Validation () ;
+    $resultat = $clients->getContact(1,1);
+    
     if (count($resultat) > 5) {
       for ($i = 0; $i < 5; $i++) {
       

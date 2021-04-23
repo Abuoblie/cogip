@@ -22,7 +22,7 @@ require_once "../Controller/contactAction.php"
 	</thead>
 	
       <?php
-      $data =  new Validation();
+      $data =  new ContactAction();
       $result = $data -> getPeople(1,1);
         foreach($result as $row){
         ?>

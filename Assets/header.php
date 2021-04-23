@@ -1,14 +1,9 @@
 <?php
-  session_start();
   require_once "Verification.php";
+  session_start();
+  
   $_SESSION = [];
   
-  if (!isset($_SESSION['email'])) {
-    //header("location:/COGIP/Assets/Login.php");
-  }
-  else{
-      echo "welcome  {$_SESSION['first_name']} {$_SESSION['last_name']} ";
-  }
 
 ?>
 <!DOCTYPE html>

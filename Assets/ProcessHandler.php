@@ -8,14 +8,13 @@ class Handle extends dbh{
 
         public function getLogin($email, $password)
         {
-                $sql = "SELECT * FROM People where email= ? and password = ?";
+                $sql = "SELECT * FROM People where email= ? and pswd = ?";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt-> execute([$email, $password]);
-                if ($row = $stmt->fetch()) {
-                        $_SESSION['email'] = $row['email'];
-                        $_SESSION['first_name'] = $row['first_name'];
-                        $_SESSION['last_name']  = $row['last_name'];
-                }
+                $login =  $stmt->fetch();
+
+                return $login;
+                
                  
         
                $this->pdo= null;

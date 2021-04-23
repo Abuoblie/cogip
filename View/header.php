@@ -1,10 +1,9 @@
-<?php 
+<?php
 require_once "../Controller/verification.php"; 
+session_start();
 
-session_start(); 
-$_SESSION = []; 
 
-var_dump($_SESSION);
+
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +41,7 @@ var_dump($_SESSION);
 						<li class="nav-item"><a class="nav-link " href="companiesDetails.php">Companies</a></li>
 						<li class="nav-item"><a class="nav-link " href="contactPageDetails.php">Contacts</a></li>
 						<li class="nav-item">
-						  <?php if(!empty($_SESSION)){ 
-						      var_dump($_SESSION);
-						      ?>
+						  <?php if(!empty($_SESSION)){ ?>
 						        
     							<div class="dropdown">
                           			<button class="btn btn-sm navbar nav-link" type="button" id="dropdownMenuButton1" 

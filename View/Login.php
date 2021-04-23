@@ -4,6 +4,9 @@ require_once "../View/header.php";
 if (isset($_POST['submit'])) {
    $signIn = new Validation();
    $user = $signIn->login($_POST['email'], sha1($_POST['pswd']));
+   if(!empty($_SESSION)){
+    header("location: companiesDetails.php");
+   }
 }
 
 

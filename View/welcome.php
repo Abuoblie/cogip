@@ -45,28 +45,55 @@ $error =array();
     $clients = new Validation () ;
     $resultat = $clients->getInvoice(1,1) ;
     if (count($resultat) > 5) {
-      for ($i = 0; $i < 5; $i++) {
-      
-        echo "
-            <tr>
-              <td>{$resultat[$i]['name']}</td>
-              <td>{$resultat[$i]['number']}</td>
-              <td>{$resultat[$i]['invoice_date']}</td>
-            </tr>
-        ";
-      }
-    } else{
-      foreach ($resultat as  $row ) {
-        echo "
-            <tr>
-              <td>{$row['name']}</td>
-              <td>{$row['number']}</td>
-              <td>{$row['invoice_date']}</td>
-            </tr>
-        ";
-  
-      }
-    }
+          for ($i = 0; $i < 5; $i++) {
+              if(empty($_SESSION)){
+                    echo "
+                        <tr>
+                          <td>{$resultat[$i]['name']}</td>
+                          <td>{$resultat[$i]['number']}</td>
+                          <td>{$resultat[$i]['invoice_date']}</td>
+                        </tr>
+                    ";
+              }else{
+                  echo "
+                        <tr>
+                          <td>{$resultat[$i]['name']}</td>
+                          <td>{$resultat[$i]['number']}</td>
+                          <td>{$resultat[$i]['invoice_date']}</td>
+                          <td>
+                                <a href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                           </td>
+                        </tr>
+                    ";
+              }
+           }
+     }else{
+        foreach ($resultat as  $row ) {
+            if(empty($_SESSION)){
+                echo "
+                    <tr>
+                      <td>{$row['name']}</td>
+                      <td>{$row['number']}</td>
+                      <td>{$row['invoice_date']}</td>
+                    </tr>
+                ";
+             }else{
+                  echo "
+                    <tr>
+                      <td>{$row['name']}</td>
+                      <td>{$row['number']}</td>
+                      <td>{$row['invoice_date']}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                         <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                      </td>
+                    </tr>
+                  ";
+             }
+        }
+     }
+    
 
     ?>
   </tbody>
@@ -95,28 +122,58 @@ $error =array();
     $resultat = $clients->getContact(1,1) ;
     if (count($resultat) > 5) {
       for ($i = 0; $i < 5; $i++) {
-      
-        echo "
-            <tr>
-              <td>{$resultat[$i]['first_name']}</td>
-              <td>{$resultat[$i]['last_name']}</td>
-              <td>{$resultat[$i]['email']}</td>
-              <td>{$resultat[$i]['name']}</td>
-            </tr>
-        ";
+          if(empty($_SESSION)){
+            echo "
+                <tr>
+                  <td>{$resultat[$i]['first_name']}</td>
+                  <td>{$resultat[$i]['last_name']}</td>
+                  <td>{$resultat[$i]['email']}</td>
+                  <td>{$resultat[$i]['name']}</td>
+                 
+                </tr>
+            ";
+          }else{
+                echo "
+                <tr>
+                  <td>{$resultat[$i]['first_name']}</td>
+                  <td>{$resultat[$i]['last_name']}</td>
+                  <td>{$resultat[$i]['email']}</td>
+                  <td>{$resultat[$i]['name']}</td>
+                  <td>
+                      <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                  </td>
+                </tr>
+            ";
+            }
+          
       }
     } else{
-      foreach ($resultat as  $row ) {
-        echo "
-            <tr>
-              <td>{$row['first_name']}</td>
-              <td>{$row['last_name']}</td>
-              <td>{$row['email']}</td>
-              <td>{$row['name']}</td>
-            </tr>
-        ";
-  
-      }
+        foreach ($resultat as  $row ) {
+        if(empty($_SESSION)){
+            echo "
+                <tr>
+                  <td>{$row['first_name']}</td>
+                  <td>{$row['last_name']}</td>
+                  <td>{$row['email']}</td>
+                  <td>{$row['name']}</td>
+                </tr>
+            ";
+      
+         }else{
+                echo "
+                    <tr>
+                      <td>{$row['first_name']}</td>
+                      <td>{$row['last_name']}</td>
+                      <td>{$row['email']}</td>
+                      <td>{$row['name']}</td>
+                      <td>
+                           <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                       </td>
+                      </tr>
+                 ";
+                  
+          }
+        }
     }
     ?>
   </tbody>
@@ -146,7 +203,7 @@ $error =array();
     
     if (count($resultat) > 5) {
       for ($i = 0; $i < 5; $i++) {
-      
+          if(empty($_SESSION)){
         echo "
         <tr>
           <td>{$resultat[$i]['name']}</td>
@@ -155,17 +212,48 @@ $error =array();
           <td>{$resultat[$i]['vat']}</td>
       </tr>
         ";
+          }else{
+              echo "
+                <tr>
+                  <td>{$resultat[$i]['name']}</td>
+                  <td>{$resultat[$i]['country']}</td>
+                  <td>{$resultat[$i]['email']}</td>
+                  <td>{$resultat[$i]['vat']}</td>
+                  <td>
+                    <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                  </td>
+              </tr>
+                ";
+              
+          }
       }
     } else{
       foreach ($resultat as  $row ) {
-        echo "
-            <tr>
-              <td>{$row['name']}</td>
-              <td>{$row['country']}</td>
-              <td>{$row['lebel']}</td>
-              <td>{$row['vat']}</td>
-            </tr>
-        ";
+          if(empty($_SESSION)){
+            echo "
+                <tr>
+                  <td>{$row['name']}</td>
+                  <td>{$row['country']}</td>
+                  <td>{$row['lebel']}</td>
+                  <td>{$row['vat']}</td>
+                  <td>
+                    <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                  </td>
+                </tr>
+            ";
+          }else{
+              echo "
+                <tr>
+                  <td>{$row['name']}</td>
+                  <td>{$row['country']}</td>
+                  <td>{$row['lebel']}</td>
+                  <td>{$row['vat']}</td>
+                  <td>
+                    <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                  </td>
+                </tr>
+            ";
+          }
   
       }
     }

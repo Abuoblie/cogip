@@ -1,6 +1,6 @@
 
 <?php 
-  require_once "Assets/header.php";
+  require_once "Assets\header.php";
 ?>
 
 <h1>COGIP : Contact directory</h1>

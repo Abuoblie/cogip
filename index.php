@@ -1,5 +1,5 @@
 <?php
-require_once "../View/header.php";
+require_once "View/header.php";
 
 
 // declaring variable + hosting

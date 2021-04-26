@@ -1,5 +1,5 @@
 <?php
-require_once "../View/header.php";
+require_once "View/header.php";
 ?>
 <?php
     $first_name = '';

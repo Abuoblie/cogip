@@ -1,5 +1,5 @@
 <?php
-require_once "../View/header.php";
+require_once "View/header.php";
 ?>
 
 <h1>COGIP : Contact directory</h1>

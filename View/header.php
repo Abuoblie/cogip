@@ -1,5 +1,5 @@
 <?php
-require_once "../Controller/verification.php"; 
+require_once "Controller/verification.php"; 
 session_start();
 
 

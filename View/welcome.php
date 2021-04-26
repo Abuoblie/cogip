@@ -1,5 +1,5 @@
 <?php
-require_once "header.php";
+require_once "../View/header.php";
 
 
 // declaring variable + hosting
@@ -280,5 +280,5 @@ $company = null;
 <?php ?><!--insert data base mysql here-->
 
 <?php
-require_once "footer.php";
+require_once "../View/footer.php";
 ?>

@@ -17,7 +17,7 @@ session_start();
 	rel="stylesheet"
 	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="assets/style.scss">
+<link rel="stylesheet" type="text/css" href="..\assets/style.scss">
 <title>codip</title>
 </head>
 <body>
@@ -31,7 +31,7 @@ session_start();
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<a class="navbar-brand " href="#"> 
-				<img class="img-fluid " height="30%" width="40%" src="assets/logo.jpeg" alt="foto"></a>
+				<img class="img-fluid " height="30%" width="40%" src="..\assets/logo.jpeg" alt="foto"></a>
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link " aria-current="" href="Login.php">Login</a></li>

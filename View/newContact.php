@@ -1,7 +1,10 @@
-<?php require_once "header.php" ?>
 <?php
+require_once "header.php";
+
+
+
       
-      $verify = new Validation();
+$verify = new Validation();
       if (isset($_POST['submit'])) {
               
               $verify->validatePeople();
@@ -13,7 +16,7 @@
 
 <div class="row justify-content-center">
  
-		<form action="formtest.php" method="POST">
+		<form action="newContact.php" method="POST">
               
 			<div
 				style="width: 50%; height: 30%; position: relative; margin-left: auto; margin-right: auto;">
@@ -44,7 +47,7 @@
 						
 				    <select name="id_company" id="company"> 
 				       <?php
-    				      $dataCompany =  new Handle();
+				       $dataCompany =  new Validation();
     				      $resultCompany = $dataCompany -> getCompanies(1,1);
     				      foreach($resultCompany as $row ){
     				    		 echo "<option value='{$row['id_Company']}'>{$row['name']}</option>"; 
@@ -61,4 +64,6 @@
 		</form>
 	</div>
 </div>
-<?php require_once "footer.php" ?>
+<?php
+require_once "footer.php";
+?>

@@ -1,7 +1,10 @@
-<?php require_once "header.php" ?>
-<?php
+<?php 
+require_once "header.php";
+
+?>
+ <?php
       
-      $verify = new Validation();
+ $verify = new Validation();
       if (isset($_POST['submit'])) {
               
               $verify->validateCompany();
@@ -45,7 +48,7 @@
 						
 				    <select name="id_Type" id="id_Type"> 
 				       <?php
-    				      $Type =  new Validation();
+				       $Type =  new Validation();
     				      $resultType = $Type -> getType();
 				      
     				      foreach($resultType as $row ){
@@ -63,4 +66,6 @@
 		</form>
 	</div>
 </div>
-<?php require_once "footer.php" ?>
+<?php
+require_once "footer.php";
+?>

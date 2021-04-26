@@ -1,2 +1,0 @@
-# cogip
-#not yet ready

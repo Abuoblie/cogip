@@ -1,6 +1,5 @@
-
 <?php
-require_once "../View/header.php";
+require_once "header.php";
 
 
 // declaring variable + hosting
@@ -44,14 +43,16 @@ $company = null;
   </thead>
   <tbody>
  <?php 
- var_dump($_GET['invoice']);
-  if(isset($_GET['idInvoice'])){
-      $deletePeople = new Validation () ;
-      //var_dump($invoice);
-      $deletePeople -> delete('invoice','id_invoice', $_GET['idInvoice'] );
-     
-      
-  }
+      $del = new Validation();
+    if(isset($_GET['invoice'])){
+        $del->delete('invoice','id_invoice',$_GET['invoice']);
+    }
+    if(isset($_GET['people'])){
+      $del->delete('People','id_People',$_GET['people']);
+    }
+    if(isset($_GET['company'])){
+      $del->delete('Company','id_Company',$_GET['company']);
+    }
   
   ?>  
     <?php
@@ -76,7 +77,7 @@ $company = null;
                           <td>{$resultat[$i]['number']}</td>
                           <td>{$resultat[$i]['invoice_date']}</td>
                           <td>
-                                <a href='#?invoice={$resultat[$i]['id_invoice']}' class='btn btn-info'>Delete</a>
+                                <a href='welcome.php?invoice={$resultat[$i]['id_invoice']}' class='btn btn-info'>Delete</a>
                            </td>
                         </tr>
                     ";
@@ -95,14 +96,12 @@ $company = null;
                 ";
              }else{
                   echo "
-                    <tr>
+                    <>
                       <td>{$row['name']}</td>
                       <td>{$row['number']}</td>
                       <td>{$row['invoice_date']}</td>
-                    </tr>
-                    <tr>
                       <td>
-                         <a  href='#?idInvoice={$resultat[$i]['id_invoice']}' class='btn btn-info'>Delete</a>
+                         <a  href='welcome.php?invoice={$row['id_invoice']}' class='btn btn-info'>Delete</a>
                       </td>
                     </tr>
                   ";
@@ -157,7 +156,7 @@ $company = null;
                   <td>{$resultat[$i]['email']}</td>
                   <td>{$resultat[$i]['name']}</td>
                   <td>
-                      <a  href='#?idPeople={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                      <a  href='welcome.php?people={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
                   </td>
                 </tr>
             ";
@@ -184,7 +183,7 @@ $company = null;
                       <td>{$row['email']}</td>
                       <td>{$row['name']}</td>
                       <td>
-                           <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                           <a  href='welcome.php?people={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
                        </td>
                       </tr>
                  ";
@@ -237,7 +236,7 @@ $company = null;
                   <td>{$resultat[$i]['email']}</td>
                   <td>{$resultat[$i]['vat']}</td>
                   <td>
-                    <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                    <a  href='welcome.php?company={$resultat[$i]['id_Company']}' class='btn btn-info'>Delete</a>
                   </td>
               </tr>
                 ";
@@ -253,9 +252,7 @@ $company = null;
                   <td>{$row['country']}</td>
                   <td>{$row['lebel']}</td>
                   <td>{$row['vat']}</td>
-                  <td>
-                    <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
-                  </td>
+                  
                 </tr>
             ";
           }else{
@@ -266,7 +263,7 @@ $company = null;
                   <td>{$row['lebel']}</td>
                   <td>{$row['vat']}</td>
                   <td>
-                    <a  href='#?id={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                    <a  href='welcome.php?company={$resultat[$i]['id_Company']}' class='btn btn-info'>Delete</a>
                   </td>
                 </tr>
             ";
@@ -283,5 +280,5 @@ $company = null;
 <?php ?><!--insert data base mysql here-->
 
 <?php
-require_once "../View/footer.php";
+require_once "footer.php";
 ?>

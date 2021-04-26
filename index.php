@@ -77,7 +77,7 @@ $company = null;
                           <td>{$resultat[$i]['number']}</td>
                           <td>{$resultat[$i]['invoice_date']}</td>
                           <td>
-                                <a href='welcome.php?invoice={$resultat[$i]['id_invoice']}' class='btn btn-info'>Delete</a>
+                                <a href='index.php?invoice={$resultat[$i]['id_invoice']}' class='btn btn-info'>Delete</a>
                            </td>
                         </tr>
                     ";
@@ -101,7 +101,7 @@ $company = null;
                       <td>{$row['number']}</td>
                       <td>{$row['invoice_date']}</td>
                       <td>
-                         <a  href='welcome.php?invoice={$row['id_invoice']}' class='btn btn-info'>Delete</a>
+                         <a  href='index.php?invoice={$row['id_invoice']}' class='btn btn-info'>Delete</a>
                       </td>
                     </tr>
                   ";
@@ -156,7 +156,7 @@ $company = null;
                   <td>{$resultat[$i]['email']}</td>
                   <td>{$resultat[$i]['name']}</td>
                   <td>
-                      <a  href='welcome.php?people={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                      <a  href='index.php?people={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
                   </td>
                 </tr>
             ";
@@ -183,7 +183,7 @@ $company = null;
                       <td>{$row['email']}</td>
                       <td>{$row['name']}</td>
                       <td>
-                           <a  href='welcome.php?people={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
+                           <a  href='index.php?people={$resultat[$i]['id_People']}' class='btn btn-info'>Delete</a>
                        </td>
                       </tr>
                  ";
@@ -236,7 +236,7 @@ $company = null;
                   <td>{$resultat[$i]['email']}</td>
                   <td>{$resultat[$i]['vat']}</td>
                   <td>
-                    <a  href='welcome.php?company={$resultat[$i]['id_Company']}' class='btn btn-info'>Delete</a>
+                    <a  href='index.php?company={$resultat[$i]['id_Company']}' class='btn btn-info'>Delete</a>
                   </td>
               </tr>
                 ";
@@ -263,7 +263,7 @@ $company = null;
                   <td>{$row['lebel']}</td>
                   <td>{$row['vat']}</td>
                   <td>
-                    <a  href='welcome.php?company={$resultat[$i]['id_Company']}' class='btn btn-info'>Delete</a>
+                    <a  href='index.php?company={$resultat[$i]['id_Company']}' class='btn btn-info'>Delete</a>
                   </td>
                 </tr>
             ";

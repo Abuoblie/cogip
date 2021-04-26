@@ -36,6 +36,6 @@ require_once "../View/header.php";
 </table>
 
 <?php 
-  require_once "Assets/footer.php ";
+require_once "../View/footer.php";
 ?>
 

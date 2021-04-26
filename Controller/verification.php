@@ -1,5 +1,5 @@
 <?php
-require_once "Model/ProcessHandler.php";
+require_once "..\Model/ProcessHandler.php";
 
 class Validation extends Handle
 {

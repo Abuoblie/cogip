@@ -1,5 +1,5 @@
 <?php
-require_once "View/header.php";
+require_once "header.php";
 ?>
 
 <h1>COGIP : Contact directory</h1>
@@ -36,6 +36,6 @@ require_once "View/header.php";
 </table>
 
 <?php 
-require_once "View/footer.php";
+require_once "footer.php";
 ?>
 

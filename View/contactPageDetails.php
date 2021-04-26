@@ -38,5 +38,5 @@ require_once "View/header.php";
 	<?php } ?>
 </div>
 <?php
-require_once "../View/footer.php";
+require_once "View/footer.php";
 ?>

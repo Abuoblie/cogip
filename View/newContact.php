@@ -65,5 +65,5 @@ $verify = new Validation();
 	</div>
 </div>
 <?php
-require_once "../View/footer.php";
+require_once "View/footer.php";
 ?>

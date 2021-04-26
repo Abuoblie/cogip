@@ -280,5 +280,5 @@ $company = null;
 <?php ?><!--insert data base mysql here-->
 
 <?php
-require_once "../View/footer.php";
+require_once "View/footer.php";
 ?>

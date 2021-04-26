@@ -1,5 +1,5 @@
 <?php
-require_once "View/header.php";
+require_once "header.php";
 ?>
 <?php
     $first_name = '';
@@ -38,5 +38,5 @@ require_once "View/header.php";
 	<?php } ?>
 </div>
 <?php
-require_once "View/footer.php";
+require_once "footer.php";
 ?>

@@ -4,7 +4,6 @@
 ?>
 <?php 
 
-session_start(); //start session
 
 // declaring variable + hosting
 
@@ -15,7 +14,7 @@ $_SESSION['succes'] = "";
 
 //conexion with DB
 
-$db = mysqli_connect('localhost', 'root', '', 'registration');
+
 
 ?>
 
@@ -172,5 +171,5 @@ $db = mysqli_connect('localhost', 'root', '', 'registration');
 <?php ?><!--insert data base mysql here-->
 
 <?php 
-  require_once "Assets/footer.php ";
+  require_once "footer.php ";
 ?>

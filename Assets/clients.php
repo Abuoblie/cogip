@@ -1,6 +1,6 @@
 
 <?php 
-  require_once "Assets/header.php";
+  require_once "header.php";
 ?>
 
 <h1>COGIP : Contact directory</h1>
@@ -37,6 +37,6 @@
 </table>
 
 <?php 
-  require_once "Assets/footer.php ";
+  require_once "footer.php ";
 ?>
 

@@ -1,5 +1,5 @@
 <?php
-require_once "View/header.php";
+require_once "header.php";
 
 if (isset($_POST['submit'])) {
    $signIn = new Validation();
@@ -34,5 +34,5 @@ if (isset($_POST['submit'])) {
 </div>
 
 <?php
-require_once "View/footer.php";
+require_once "footer.php";
 ?>

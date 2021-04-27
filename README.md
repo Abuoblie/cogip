@@ -16,6 +16,8 @@ TABLE People ( first_name varchar(50), last_name varchar(50), email varchar(128)
 #using the Mvc model
          #We tried to use the mvc model by creating an abstract class called Process handler that handles all the interactions with the database, a controller class that we called validation that commute between the view 
          and the process handler and finally the views that shows the contents to users.
- # the include folder contains all the included files such as headers and footers
- #the assets folder contains style sheets and logo
+ # the include folder
+            #the include folder contains all the included files such as headers and footers
+ #assets           
+           #the assets folder contains style sheets and logo
  

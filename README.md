@@ -10,7 +10,8 @@
 
 # Database 
           #The database named cogip contain three tables invoice, company, people and type of companies
-Outlook of database:
+ ### Outlook of database:
+ 
           #TABLE Type (id_Type int not null AUTO_INCREMENT PRIMARY KEY, label varchar (50) NOT null);
           
           #TABLE Company (name varchar (50) not null, country varchar (50) not null, vat varchar (50) not null, id_Type int not null, FOREIGN KEY( id_Type) REFERENCES Type(    id_Type, id_Company int not null AUTO_INCREMENT PRIMARY key);

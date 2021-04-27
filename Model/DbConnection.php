@@ -8,11 +8,11 @@ Abstract class dbh{
 
         protected function connect()
         {
-               $this->severName = "localhost";
-               $this->DbName = "cogip";
-               $this->user = "root";
+               $this->severName = "remotemysql.com";
+               $this->DbName = "eV1HtCv73X";
+               $this->user = "eV1HtCv73X";
                $this->charset = "utf8mb4";
-               $this->password= "";
+               $this->password= "X3xC0dUfWU";
 
                try {
                        $dsn = "mysql:host=".$this->severName.";dbname=".$this->DbName.";charset=".$this->charset;
